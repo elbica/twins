@@ -6,10 +6,12 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {Input} from 'react-native-elements';
 
 function LoginScreen(props) {
-  const gotoEmployeeMain = () => {
-    props.navigation.navigate('EmployeeMain');
+  const gotoHome = () => {
+    props.navigation.navigate('Tab');
   };
 
   return (
@@ -18,9 +20,7 @@ function LoginScreen(props) {
         <Text style={styles.sectionTitle}>TWIN</Text>
         <TextInput style={styles.TextInput} placeholder={'ID'} />
         <TextInput style={styles.TextInput} placeholder={'Password'} />
-        <TouchableOpacity
-          onPress={gotoEmployeeMain}
-          style={styles.submitButton}>
+        <TouchableOpacity onPress={gotoHome} style={styles.submitButton}>
           <Text children={'Login'} style={styles.submitText}></Text>
         </TouchableOpacity>
       </View>

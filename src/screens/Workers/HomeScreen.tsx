@@ -101,6 +101,8 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
   },
   Button1: {
+    justifyContent: 'center',
+    alignItems: 'center',
     textAlign: 'center',
     padding: 6,
     margin: 15,
@@ -111,6 +113,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   Button2: {
+    justifyContent: 'center',
+    alignItems: 'center',
     textAlign: 'center',
     margin: 10,
     height: 55,

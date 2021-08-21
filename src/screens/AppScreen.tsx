@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 
-function HomeScreen(props) {
+function AppScreen(props) {
   const gotoLogin = () => {
     props.navigation.navigate('Login'); //트윈 계정으로 로그인하는 페이지로 이동.
   };
@@ -14,4 +14,4 @@ function HomeScreen(props) {
   );
 }
 
-export default HomeScreen;
+export default AppScreen;
