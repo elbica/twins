@@ -21,7 +21,10 @@ function EmployeeMainScreen(props) {
         name="bell"></BellIcon>
       <View style={styles.sectionContainer}>
         <View style={styles.elem}>
-          <Image style={styles.userImage} source={require('./gray.jpg')} />
+          <Image
+            style={styles.userImage}
+            source={require('../../assets/images/gray.jpg')}
+          />
           <View style={{marginLeft: 30}}>
             <Text style={styles.sectionText1}>1234PRJ</Text>
             <Text style={styles.sectionText1}>배관공</Text>
@@ -59,8 +62,8 @@ function EmployeeMainScreen(props) {
           type="outline"
           titleStyle={{color: '#5D5FEF', fontSize: 24, fontWeight: '500'}}
           containerStyle={{
-            width: 260,
-            marginHorizontal: 50,
+            width: 300,
+            marginHorizontal: 20,
           }}
           onPress={() => props.navigation.navigate('업무 내용 등록')}
         />
@@ -78,8 +81,8 @@ function EmployeeMainScreen(props) {
           type="outline"
           titleStyle={{color: '#5D5FEF', fontSize: 24, fontWeight: '500'}}
           containerStyle={{
-            width: 260,
-            marginHorizontal: 50,
+            width: 300,
+            marginHorizontal: 20,
             marginTop: 20,
           }}
         />

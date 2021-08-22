@@ -20,31 +20,32 @@ import Notice from '../screens/Workers/Menu/NoticeScreen';
 import Project from '../screens/Workers/Menu/ProjectInfoScreen';
 import Help from '../screens/Workers/Menu/HelpScreen';
 import Setting from '../screens/Workers/Menu/SettingScreen';
+import RegisterNavigator from '../navigators/RegisterNavigator';
 
 const Stack = createStackNavigator();
 const MenuStack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
 
-const RegisterNavigator = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        options={{headerShown: false}}
-        name="메인"
-        component={Home}
-      />
-      <Stack.Screen name="업무 내용 등록" component={Register} />
-      <Stack.Screen name="장비명" component={Equipment} />
-      <Stack.Screen name="시스템명" component={System} />
-      <Stack.Screen name="위치" component={Location} />
-      <Stack.Screen name="진행률" component={Progress} />
-      <Stack.Screen name="작업코드" component={WorkCode} />
-      <Stack.Screen name="이슈사항" component={Issues} />
-      <Stack.Screen name="로스사항" component={Loss} />
-      <Stack.Screen name="알람" component={Alarm} />
-    </Stack.Navigator>
-  );
-};
+// const RegisterNavigator = () => {
+//   return (
+//     <Stack.Navigator>
+//       <Stack.Screen
+//         options={{headerShown: false}}
+//         name="메인"
+//         component={Home}
+//       />
+//       <Stack.Screen name="업무 내용 등록" component={Register} />
+//       <Stack.Screen name="장비명" component={Equipment} />
+//       <Stack.Screen name="시스템명" component={System} />
+//       <Stack.Screen name="위치" component={Location} />
+//       <Stack.Screen name="진행률" component={Progress} />
+//       <Stack.Screen name="작업코드" component={WorkCode} />
+//       <Stack.Screen name="이슈사항" component={Issues} />
+//       <Stack.Screen name="로스사항" component={Loss} />
+//       <Stack.Screen name="알람" component={Alarm} />
+//     </Stack.Navigator>
+//   );
+// };
 
 const MenuNavigator = () => {
   return (
@@ -73,7 +74,7 @@ export default function MainTabs() {
         tabBarInactiveTintColor: 'white',
         tabBarActiveTintColor: '#5D5FEF',
       }}>
-      <BottomTab.Screen name="홈" component={RegisterNavigator} />
+      <BottomTab.Screen name="홈" children={() => <RegisterNavigator />} />
       <BottomTab.Screen name="내 작업" component={MyWorkScreen} />
       <BottomTab.Screen name="전체" component={MenuNavigator} />
     </BottomTab.Navigator>

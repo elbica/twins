@@ -26,4 +26,4 @@ const RegisterNavigator = () => {
   );
 };
 
-export default RegisterNavigator();
+export default RegisterNavigator;

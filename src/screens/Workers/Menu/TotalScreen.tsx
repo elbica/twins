@@ -23,7 +23,10 @@ const list = [
 function TotalScreen(props) {
   return (
     <View>
-      <Image style={styles.LogoImage} source={require('./gray.jpg')} />
+      <Image
+        style={styles.LogoImage}
+        source={require('../../../assets/images/gray.jpg')}
+      />
       {list.map((item, i) => (
         <TouchableOpacity
           key={i}
