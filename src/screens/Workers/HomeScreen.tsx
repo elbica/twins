@@ -1,6 +1,8 @@
 import React from 'react';
 import {Text, StyleSheet, View, TouchableOpacity, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
+import BellIcon from 'react-native-vector-icons/Octicons';
+import {Button} from 'react-native-elements';
 
 function EmployeeMainScreen(props) {
   const gotoSecond = () => {
@@ -8,10 +10,19 @@ function EmployeeMainScreen(props) {
   };
   return (
     <View>
+      <BellIcon
+        style={{
+          fontSize: 25,
+          color: '#5D5FEF',
+          marginTop: 10,
+          marginLeft: '90%',
+        }}
+        onPress={() => props.navigation.navigate('알람')}
+        name="bell"></BellIcon>
       <View style={styles.sectionContainer}>
         <View style={styles.elem}>
           <Image style={styles.userImage} source={require('./gray.jpg')} />
-          <View>
+          <View style={{marginLeft: 30}}>
             <Text style={styles.sectionText1}>1234PRJ</Text>
             <Text style={styles.sectionText1}>배관공</Text>
             <Text style={styles.sectionText1}>홍길동</Text>
@@ -34,14 +45,44 @@ function EmployeeMainScreen(props) {
           </View>
         </View>
 
-        <TouchableOpacity onPress={gotoSecond} style={styles.Button2}>
-          <Icon name="plus"></Icon>
-          <Text children={'업무 내용 등록'} style={styles.Text2}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={gotoSecond} style={styles.Button2}>
-          <Icon name="plus"></Icon>
-          <Text children={'연장 근무 사전 신청'} style={styles.Text2}></Text>
-        </TouchableOpacity>
+        <Button
+          title="업무 내용 등록"
+          icon={{
+            name: 'plus',
+            type: 'font-awesome',
+            size: 15,
+            color: '#5D5FEF',
+          }}
+          buttonStyle={{
+            borderColor: 'rgba(0, 0, 0, 0.12)',
+          }}
+          type="outline"
+          titleStyle={{color: '#5D5FEF', fontSize: 24, fontWeight: '500'}}
+          containerStyle={{
+            width: 260,
+            marginHorizontal: 50,
+          }}
+          onPress={() => props.navigation.navigate('업무 내용 등록')}
+        />
+        <Button
+          title="연장 근무 사전 신청"
+          icon={{
+            name: 'plus',
+            type: 'font-awesome',
+            size: 15,
+            color: '#5D5FEF',
+          }}
+          buttonStyle={{
+            borderColor: 'rgba(0, 0, 0, 0.12)',
+          }}
+          type="outline"
+          titleStyle={{color: '#5D5FEF', fontSize: 24, fontWeight: '500'}}
+          containerStyle={{
+            width: 260,
+            marginHorizontal: 50,
+            marginTop: 20,
+          }}
+        />
       </View>
     </View>
   );
@@ -59,13 +100,12 @@ const styles = StyleSheet.create({
   elem: {
     width: '100%',
     flexDirection: 'row',
-    //alignItems: 'center',
-    justifyContent: 'space-between',
     padding: 3,
   },
   userImage: {
     width: 98,
     height: 116,
+    margin: 10,
   },
   sectionContainer: {
     marginTop: 32,
@@ -79,7 +119,7 @@ const styles = StyleSheet.create({
     color: '#000000',
   },
   sectionText2: {
-    paddingTop: 50,
+    paddingTop: 40,
     textAlign: 'center',
     fontStyle: 'normal',
     fontSize: 26,
@@ -110,17 +150,6 @@ const styles = StyleSheet.create({
     height: 76,
     marginBottom: 32,
     backgroundColor: '#5D5FEF',
-    borderRadius: 4,
-  },
-  Button2: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-    margin: 10,
-    height: 55,
-    borderStyle: 'solid',
-    borderWidth: 1,
-    borderColor: 'rgba(0, 0, 0, 0.12)',
     borderRadius: 4,
   },
 });

@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Image, StyleSheet} from 'react-native';
-import {ListItem} from 'react-native-elements';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import {ListItem, Image} from 'react-native-elements';
 
 const list = [
   {
-    title: '내정보',
+    title: '내 정보',
   },
   {
     title: '공지사항',
@@ -25,12 +25,15 @@ function TotalScreen(props) {
     <View>
       <Image style={styles.LogoImage} source={require('./gray.jpg')} />
       {list.map((item, i) => (
-        <ListItem key={i} bottomDivider>
-          <ListItem.Content>
-            <ListItem.Title>{item.title}</ListItem.Title>
-          </ListItem.Content>
-          <ListItem.Chevron />
-        </ListItem>
+        <TouchableOpacity
+          key={i}
+          onPress={() => props.navigation.navigate(item.title)}>
+          <ListItem key={i} bottomDivider>
+            <ListItem.Content>
+              <ListItem.Title>{item.title}</ListItem.Title>
+            </ListItem.Content>
+          </ListItem>
+        </TouchableOpacity>
       ))}
     </View>
   );

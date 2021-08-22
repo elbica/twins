@@ -13,18 +13,16 @@ const Stack = createStackNavigator();
 
 const RegisterNavigator = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="업무 내용 등록" component={Register} />
-        <Stack.Screen name="장비명" component={Equipment} />
-        <Stack.Screen name="시스템명" component={System} />
-        <Stack.Screen name="위치" component={Location} />
-        <Stack.Screen name="진행률" component={Progress} />
-        <Stack.Screen name="작업코드" component={WorkCode} />
-        <Stack.Screen name="이슈사항" component={Issues} />
-        <Stack.Screen name="로스사항" component={Loss} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="업무 내용 등록" component={Register} />
+      <Stack.Screen name="장비명" component={Equipment} />
+      <Stack.Screen name="시스템명" component={System} />
+      <Stack.Screen name="위치" component={Location} />
+      <Stack.Screen name="진행률" component={Progress} />
+      <Stack.Screen name="작업코드" component={WorkCode} />
+      <Stack.Screen name="이슈사항" component={Issues} />
+      <Stack.Screen name="로스사항" component={Loss} />
+    </Stack.Navigator>
   );
 };
 

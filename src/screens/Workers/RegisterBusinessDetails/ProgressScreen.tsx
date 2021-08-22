@@ -25,7 +25,7 @@ const list = [
 
 function Progress(props) {
   return (
-    <View style={{flex: 1, alignItems: 'stretch', justifyContent: 'center'}}>
+    <View>
       {list.map((item, i) => (
         <ListItem key={i} bottomDivider>
           <ListItem.Content>
@@ -46,7 +46,7 @@ function Progress(props) {
                 children: <Icon name="circle" size={20} color="#5D5FEF" />,
               }}
             />
-            <Text>Value: {35}</Text>
+            <Text>{35}%</Text>
           </ListItem.Content>
         </ListItem>
       ))}
