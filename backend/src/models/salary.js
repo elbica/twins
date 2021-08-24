@@ -12,7 +12,7 @@ const SalarySchema = mongoose.Schema({
     total: Number,
     insurence: {
       company: Number,
-      personal: Number;
+      personal: Number,
     },
   },
 });
