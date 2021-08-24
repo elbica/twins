@@ -2,12 +2,12 @@ import React from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import {ListItem} from 'react-native-elements';
 
-function MyInfoScreen() {
+function PasswordModifyScreen() {
   return (
     <View>
-      <Text>MyInfoScreen</Text>
+      <Text>PasswordModifyScreen</Text>
     </View>
   );
 }
 
-export default MyInfoScreen;
+export default PasswordModifyScreen;

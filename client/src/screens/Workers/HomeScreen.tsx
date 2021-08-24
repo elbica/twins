@@ -1,15 +1,25 @@
 import React from 'react';
-import {Text, StyleSheet, View, TouchableOpacity, Image} from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import BellIcon from 'react-native-vector-icons/Octicons';
 import {Button} from 'react-native-elements';
+import styled from 'styled-components/native';
+import {useNavigation} from '@react-navigation/native';
 
 function EmployeeMainScreen(props) {
+  const navigation = useNavigation();
   const gotoSecond = () => {
     //props.navigation.navigate('Login')
   };
   return (
-    <View>
+    <ScrollView>
       <BellIcon
         style={{
           fontSize: 25,
@@ -87,7 +97,8 @@ function EmployeeMainScreen(props) {
           }}
         />
       </View>
-    </View>
+      <TestView />
+    </ScrollView>
   );
 }
 
@@ -156,3 +167,10 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
 });
+
+const TestView = styled.View`
+  flex: 1;
+  background-color: red;
+  height: 100px;
+  width: 100px;
+`;
