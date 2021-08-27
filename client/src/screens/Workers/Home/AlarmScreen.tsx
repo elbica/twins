@@ -15,12 +15,12 @@ const list = [
 
 function AlarmScreen(props) {
   return (
-    <View>
+    <View style={{flex: 1, backgroundColor: 'white'}}>
       {list.map((item, i) => (
         <TouchableOpacity
           key={i}
           onPress={() => props.navigation.navigate(item.title)}>
-          <ListItem key={i} bottomDivider>
+          <ListItem key={i}>
             <ListItem.Content>
               <ListItem.Title style={styles.title}>{item.title}</ListItem.Title>
               <ListItem.Title style={styles.subtitle}>

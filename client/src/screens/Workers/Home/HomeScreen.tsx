@@ -13,13 +13,13 @@ import {Button} from 'react-native-elements';
 import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/native';
 
-function EmployeeMainScreen(props) {
+function EmployeeMainScreen() {
   const navigation = useNavigation();
   const gotoSecond = () => {
-    //props.navigation.navigate('Login')
+    navigation.navigate('');
   };
   return (
-    <ScrollView>
+    <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
       <BellIcon
         style={{
           fontSize: 25,
@@ -27,13 +27,13 @@ function EmployeeMainScreen(props) {
           marginTop: 10,
           marginLeft: '90%',
         }}
-        onPress={() => props.navigation.navigate('알람')}
+        onPress={() => navigation.navigate('알람')}
         name="bell"></BellIcon>
       <View style={styles.sectionContainer}>
         <View style={styles.elem}>
           <Image
             style={styles.userImage}
-            source={require('../../assets/images/gray.jpg')}
+            source={require('../../../assets/images/gray.jpg')}
           />
           <View style={{marginLeft: 30}}>
             <Text style={styles.sectionText1}>1234PRJ</Text>
@@ -75,7 +75,7 @@ function EmployeeMainScreen(props) {
             width: 300,
             marginHorizontal: 20,
           }}
-          onPress={() => props.navigation.navigate('업무 내용 등록')}
+          onPress={() => navigation.navigate('업무 내용 등록 버튼')}
         />
         <Button
           title="연장 근무 사전 신청"
@@ -95,9 +95,9 @@ function EmployeeMainScreen(props) {
             marginHorizontal: 20,
             marginTop: 20,
           }}
+          onPress={() => navigation.navigate('연장 근무 사전 신청')}
         />
       </View>
-      <TestView />
     </ScrollView>
   );
 }
@@ -168,9 +168,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const TestView = styled.View`
-  flex: 1;
-  background-color: red;
-  height: 100px;
-  width: 100px;
-`;
+// const TestView = styled.View`
+//   flex: 1;
+//   background-color: red;
+//   height: 100px;
+//   width: 100px;
+// `;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, TouchableOpacity, Text, Alert} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Alert} from 'react-native';
 import {ListItem, Button} from 'react-native-elements';
 
 const list = [
@@ -35,7 +35,7 @@ function RegisterBusinessScreen(props) {
   const goAlert1 = () =>
     Alert.alert(
       '작업내용 확인', // 첫번째 text: 타이틀 제목
-      '장비명 : #129', // 두번째 text: 그 밑에 작은 제목
+      '장비명 : #129\n시스템명 : \n...', // 두번째 text: 그 밑에 작은 제목
       [
         {
           text: '작업내용 등록', // 버튼 제목
@@ -52,7 +52,7 @@ function RegisterBusinessScreen(props) {
     );
 
   return (
-    <View>
+    <View style={{flex: 1, backgroundColor: 'white'}}>
       {list.map((item, i) => (
         <TouchableOpacity
           key={i}
@@ -91,11 +91,7 @@ const styles = StyleSheet.create({
     color: 'rgba(0, 0, 0, 0.6);',
   },
   Button1: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
+    alignSelf: 'center',
     marginVertical: 10,
   },
   text1: {

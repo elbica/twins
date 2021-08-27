@@ -2,9 +2,9 @@ import React from 'react';
 import {View} from 'react-native';
 import {CheckBox} from 'react-native-elements';
 
-function SystemName() {
+function EquipmentName() {
   return (
-    <View>
+    <View style={{flex: 1, backgroundColor: 'white'}}>
       <CheckBox
         title="#129"
         checkedIcon="clear"
@@ -37,4 +37,4 @@ function SystemName() {
   );
 }
 
-export default SystemName;
+export default EquipmentName;

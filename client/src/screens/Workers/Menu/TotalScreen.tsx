@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {ListItem, Image} from 'react-native-elements';
+import {useNavigation} from '@react-navigation/native';
 
 const list = [
   {
@@ -20,9 +21,10 @@ const list = [
   },
 ];
 
-function TotalScreen(props) {
+function TotalScreen() {
+  const navigation = useNavigation();
   return (
-    <View>
+    <View style={{flex: 1, backgroundColor: 'white'}}>
       <Image
         style={styles.LogoImage}
         source={require('../../../assets/images/gray.jpg')}
@@ -30,10 +32,12 @@ function TotalScreen(props) {
       {list.map((item, i) => (
         <TouchableOpacity
           key={i}
-          onPress={() => props.navigation.navigate(item.title)}>
-          <ListItem key={i} bottomDivider>
+          onPress={() => navigation.navigate(item.title)}>
+          <ListItem key={i}>
             <ListItem.Content>
-              <ListItem.Title>{item.title}</ListItem.Title>
+              <ListItem.Title style={{fontSize: 20}}>
+                {item.title}
+              </ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>

@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, TextInput, StyleSheet} from 'react-native';
 
-function IssueScreen() {
+function LossScreen() {
   return (
-    <View>
-      <TextInput multiline style={styles.TextInput} placeholder={'이슈사항'} />
+    <View style={{flex: 1, backgroundColor: 'white'}}>
+      <TextInput multiline style={styles.TextInput} placeholder={'로스사항'} />
     </View>
   );
 }
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default IssueScreen;
+export default LossScreen;
